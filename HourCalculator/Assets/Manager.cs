@@ -32,7 +32,7 @@ public class Manager : MonoBehaviour
         minutes = int.Parse(temp[1]);
         seconds = int.Parse(temp[2]);
 
-        currenthr24.text = string.Format("{0:00}:{1:00}{2:00}", hours, minutes, seconds);
+        currenthr24.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
 
         if (hours > 12)
         {
