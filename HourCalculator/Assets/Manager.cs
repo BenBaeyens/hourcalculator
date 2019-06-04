@@ -2,49 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using System;
 
 public class Manager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+
+    public TextMeshProUGUI currenthr12;
+    public TextMeshProUGUI currenthr24;
+
+
+    int hours;
+    int minutes;
+    int seconds;
+
+    string time;
+
+
+    private void Start() {
+        InvokeRepeating("CurrentTime", 0f, 0.5f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void CalculateTime(int t) {
+    public void CurrentTime() {
         string[] temp = DateTime.Now.TimeOfDay.ToString().Split(':');
         hours = int.Parse(temp[0]);
         minutes = int.Parse(temp[1]);
+        seconds = int.Parse(temp[2]);
 
-        minutes += 14;
-        for (int i = 0; i < t; i++)
+        currenthr24.text = string.Format("{0:00}:{1:00}", hours, minutes);
+
+        if (hours > 12)
         {
+            hours -= 12;
+            currenthr12.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds) + " PM";
+        } else
+        {
+            currenthr12.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds) + " AM";
 
-            hours += 1;
-            minutes += 50;
-
-            if (minutes >= 70)
-            {
-                minutes -= 70;
-                hours++;
-            }
-            if (minutes >= 60)
-            {
-                minutes -= 60;
-                hours += 1;
-            }
-            if (hours >= 24)
-                hours -= 24;
         }
 
-        time = string.Format("{0:00}:{1:00}", hours, minutes);
+
 
     }
 
