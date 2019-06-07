@@ -35,3 +35,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+HourCalculator/ProjectSettings/ProjectSettings.asset
+HourCalculator/ProjectSettings/ProjectSettings.asset
