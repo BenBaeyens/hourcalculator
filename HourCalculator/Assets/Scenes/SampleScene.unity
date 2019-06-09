@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 29439278}
   - component: {fileID: 29439277}
   m_Layer: 5
-  m_Name: Current time
+  m_Name: Custom time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4646,6 +4646,7 @@ MonoBehaviour:
   currenthr24: {fileID: 1066589021}
   customhr12: {fileID: 976560680}
   customhr24: {fileID: 1862489705}
+  customtimetext: {fileID: 29439277}
   animator: {fileID: 0}
 --- !u!1 &2029222623
 GameObject:
