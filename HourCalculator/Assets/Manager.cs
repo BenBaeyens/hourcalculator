@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.Animations;
 
 public class Manager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Manager : MonoBehaviour
 
     public TextMeshProUGUI currenthr12;
     public TextMeshProUGUI currenthr24;
+
+    public TextMeshProUGUI customhr12;
+    public TextMeshProUGUI customhr24;
 
 
     int hours;
@@ -21,6 +25,35 @@ public class Manager : MonoBehaviour
 
     private void Start() {
         InvokeRepeating("CurrentTime", 0f, 0.5f);
+    }
+
+    public void CustomTime(string s)
+    {
+        if(s == "Midnight")
+        {
+            customhr12.text = "12:00:00 AM";
+            customhr24.text = "00:00:00";
+        }
+        if (s == "Midday")
+        {
+            customhr12.text = "12:00:00 PM";
+            customhr24.text = "12:00:00";
+        }
+        if (s == "Evening")
+        {
+            customhr12.text = "06:00:00 PM";
+            customhr24.text = "16:00:00";
+        }
+        if (s == "Morning")
+        {
+            customhr12.text = "06:00:00 AM";
+            customhr24.text = "06:00:00";
+        }
+    }
+
+    void animation()
+    {
+
     }
 
     public void CurrentTime() {
