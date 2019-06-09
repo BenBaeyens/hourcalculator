@@ -22,8 +22,11 @@ public class Manager : MonoBehaviour
 
     string time;
 
+    public Animator animator;
+
 
     private void Start() {
+        animator = GetComponent<Animator>();
         InvokeRepeating("CurrentTime", 0f, 0.5f);
     }
 
@@ -33,27 +36,31 @@ public class Manager : MonoBehaviour
         {
             customhr12.text = "12:00:00 AM";
             customhr24.text = "00:00:00";
+            Animation();
         }
         if (s == "Midday")
         {
             customhr12.text = "12:00:00 PM";
             customhr24.text = "12:00:00";
+            Animation();
         }
         if (s == "Evening")
         {
             customhr12.text = "06:00:00 PM";
             customhr24.text = "16:00:00";
+            Animation();
         }
         if (s == "Morning")
         {
             customhr12.text = "06:00:00 AM";
             customhr24.text = "06:00:00";
+            Animation();
         }
     }
 
-    void animation()
+    void Animation()
     {
-
+        animator.SetTrigger("CustomTime2Open");
     }
 
     public void CurrentTime() {
