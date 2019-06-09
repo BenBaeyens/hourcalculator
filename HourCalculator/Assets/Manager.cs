@@ -38,28 +38,28 @@ public class Manager : MonoBehaviour
         {
             customhr12.text = "12:00:00 AM";
             customhr24.text = "00:00:00";
-            Animation();
+            
         }
         if (s == "Midday")
         {
             customhr12.text = "12:00:00 PM";
             customhr24.text = "12:00:00";
-            Animation();
+            
         }
         if (s == "Evening")
         {
             
             customhr12.text = "06:00:00 PM";
             customhr24.text = "16:00:00";
-            Animation();
+            
         }
         if (s == "Morning")
         {
             customhr12.text = "06:00:00 AM";
             customhr24.text = "06:00:00";
-            Animation();
+            
         }
-
+        Animation();
         customtimetext.text = s;
     }
 
