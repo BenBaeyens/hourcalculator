@@ -15,6 +15,8 @@ public class Manager : MonoBehaviour
     public TextMeshProUGUI customhr12;
     public TextMeshProUGUI customhr24;
 
+    public TextMeshProUGUI customtimetext;
+
 
     int hours;
     int minutes;
@@ -46,6 +48,7 @@ public class Manager : MonoBehaviour
         }
         if (s == "Evening")
         {
+            
             customhr12.text = "06:00:00 PM";
             customhr24.text = "16:00:00";
             Animation();
@@ -56,6 +59,8 @@ public class Manager : MonoBehaviour
             customhr24.text = "06:00:00";
             Animation();
         }
+
+        customtimetext.text = s;
     }
 
     void Animation()
